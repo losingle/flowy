@@ -1,1 +1,56 @@
-.dragging{z-index:111!important}.block{position:absolute;z-index:9}.indicator{width:12px;height:12px;border-radius:60px;background-color:#217ce8;margin-top:-5px;opacity:1;transition:all .3s cubic-bezier(.05,.03,.35,1);transform:scale(1);position:absolute;z-index:2}.invisible{opacity:0!important;transform:scale(0)}.indicator:after{content:"";display:block;width:12px;height:12px;background-color:#217ce8;transform:scale(1.7);opacity:.2;border-radius:60px}.arrowblock{position:absolute;width:100%;overflow:visible;pointer-events:none}.arrowblock svg{width: -webkit-fill-available;overflow: visible;}
+/* 拖拽元素的样式 - 设置最高层级确保显示在最上方 */
+.dragging {
+  z-index: 111 !important;
+}
+
+/* 基本块元素样式 */
+.block {
+  position: absolute;
+  z-index: 9;
+}
+
+/* 指示器样式 - 用于连接点的可视化 */
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 60px;
+  background-color: #217ce8;
+  margin-top: -5px;
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
+  transform: scale(1);
+  position: absolute;
+  z-index: 2;
+}
+
+/* 不可见元素样式 */
+.invisible {
+  opacity: 0 !important;
+  transform: scale(0);
+}
+
+/* 指示器的伪元素 - 创建外部光晕效果 */
+.indicator:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #217ce8;
+  transform: scale(1.7);
+  opacity: 0.2;
+  border-radius: 60px;
+}
+
+/* 箭头块样式 - 用于连接线的容器 */
+.arrowblock {
+  position: absolute;
+  width: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* 箭头块内的SVG样式 */
+.arrowblock svg {
+  width: -webkit-fill-available;
+  overflow: visible;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "flowy",
+  "version": "1.0.0",
+  "description": "A JavaScript library for creating and managing flowcharts",
+  "main": "dist/flowy.min.js",
+  "scripts": {
+    "build": "bun run build:js && bun run build:css",
+    "build:js": "mkdir -p dist && terser engine/flowy.js -o dist/flowy.min.js --compress --mangle",
+    "build:css": "mkdir -p dist && cleancss -o dist/flowy.min.css engine/flowy.css",
+    "dev": "bun --hot server.js",
+    "start": "bun server.js",
+    "demo": "bun server.js"
+  },
+  "keywords": [
+    "flowchart",
+    "diagram",
+    "workflow",
+    "drag-and-drop"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.39.2"
+  }
+}

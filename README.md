@@ -61,6 +61,43 @@ Adding Flowy to your WebApp is incredibly simple:
 2.  Create a canvas element that will contain the flowchart (for example,  `<div id="canvas"></div>`)
 3.  Create the draggable blocks with the  `.create-flowy`  class (for example,  `<div class="create-flowy">Grab me</div>`)
 
+### Building with Bun
+
+If you want to build the project yourself, you can use the Bun build system:
+
+1. Make sure you have [Bun](https://bun.sh/) installed:
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+2. Install dependencies and build the project:
+```bash
+bun install        # Install dependencies including terser and clean-css-cli
+bun run build      # Build both JS and CSS
+```
+
+Or build separately:
+```bash
+bun run build:js   # Build JS only
+bun run build:css  # Build CSS only
+```
+
+3. The built files will be output to the `dist` directory:
+   - `dist/flowy.min.js` - JavaScript file compressed with terser
+   - `dist/flowy.min.css` - CSS file compressed with clean-css
+
+### Running the Demo Server
+
+The project includes a simple demo server that directly serves files from the demo directory, allowing you to quickly preview and test Flowy:
+
+```bash
+bun demo  # Start the demo server
+# or
+bun --hot server.js  # Development mode with hot reloading
+```
+
+Then visit `http://localhost:3000` in your browser to view the demo. The server will directly serve files from the demo directory and can correctly handle compressed files in the dist directory.
+
 ## Running Flowy
 
 ### Initialization
